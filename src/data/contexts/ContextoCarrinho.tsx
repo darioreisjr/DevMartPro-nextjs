@@ -1,6 +1,10 @@
 import { createContext } from "react";
 
-const ContextoCarrinho = createContext<any>(null);
+interface ContextoCarrinhoProps {
+  numero: number;
+}
+
+const ContextoCarrinho = createContext<ContextoCarrinhoProps>({} as any);
 
 export function ProvedorCarrinho(props: any) {
   return (
