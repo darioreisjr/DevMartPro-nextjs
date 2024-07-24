@@ -1,3 +1,4 @@
+import useCarrinho from "@/data/hooks/useCarrinho";
 import Produto from "@/data/model/Produto";
 import Image from "next/image";
 
@@ -6,6 +7,7 @@ export interface CartaoProdutoProps {
 }
 
 export default function CartaoProduto(props: CartaoProdutoProps) {
+  const { adicionar } = useCarrinho();
   const { id, nome, descricao, preco, imagem } = props.produto;
 
   return (
@@ -23,7 +25,10 @@ export default function CartaoProduto(props: CartaoProdutoProps) {
               currency: "BRL",
             })}
           </span>
-          <button className="flex-shrink-0 px-4 py-2 text-white font-bold bg-indigo-600 rounded-md">
+          <button
+            onClick={() => adicionar(props.produto)}
+            className="flex-shrink-0 px-4 py-2 text-white font-bold bg-indigo-600 rounded-md"
+          >
             Adicionar
           </button>
         </div>
