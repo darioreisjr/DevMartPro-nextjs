@@ -9,13 +9,14 @@ export const metadata: Metadata = {
   description: "O marketplace definitivo para desenvolvedores. Encontre as melhores ferramentas, recursos, e produtos para otimizar seu desenvolvimento de software. Qualidade, inovação e suporte especializado ao seu alcance.",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body className={inter.className}>{children}</body>
     </html>
   );
