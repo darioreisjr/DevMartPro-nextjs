@@ -11,14 +11,14 @@ export default function TotalCarrinho(props: TotalCarrinhoProps) {
   );
 
   return (
-    <div className="flex items-center justify-between bg-zinc-900 rounded-md p-7">
-      <div className="flex flex-col justify-between">
+    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0 justify-between bg-zinc-900 rounded-md p-7">
+      <div className="flex flex-col justify-between items-center md:items-start ">
         <span className=" text-zinc-500">Total</span>
         <span className="text-3xl font-bold text-yellow-500">
           R${total.toFixed(2)}
         </span>
       </div>
-      <button className="bg-green-600 px-4 py-2 rounded-md text-xl">
+      <button className="bg-green-600 px-4 py-2 rounded-md text-xl w-60 md:w-auto">
         Finalizar
       </button>
     </div>

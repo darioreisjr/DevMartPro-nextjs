@@ -10,8 +10,8 @@ export interface AreaItemCarrinhoProps {
 
 export default function AreaItemCarrinho(props: AreaItemCarrinhoProps) {
     return (
-        <div className="flex items-center gap-5 bg-zinc-900 rounded-md overflow-hidden">
-            <div className="relative w-28 h-28">
+        <div className="flex flex-col md:flex-row items-center gap-5 bg-zinc-900 rounded-md overflow-hidden">
+            <div className="relative top-4 md:top-0 w-[300px] h-[300px] md:w-28 md:h-28">
                 <Image
                     src={props.item.produto.imagem}
                     alt={props.item.produto.nome}
@@ -20,9 +20,9 @@ export default function AreaItemCarrinho(props: AreaItemCarrinhoProps) {
                 />
             </div>
             <div className="flex flex-col justify-center flex-1">
-                <span className="text-xl font-bold">{props.item.produto.nome}</span>
-                <span className="text-sm text-zinc-400">{props.item.produto.descricao}</span>
-                <div className="flex items-center gap-2 mt-2 text-zinc-400 text-lg font-bold">
+                <span className="text-xl text-center md:text-start font-bold">{props.item.produto.nome}</span>
+                <span className="text-sm mx-8 md:mx-0 text-zinc-400">{props.item.produto.descricao}</span>
+                <div className="flex mx-8 md:mx-0 items-center gap-2 mt-2 text-zinc-400 text-lg font-bold">
                     <span>R$ {props.item.produto.preco.toFixed(2)}</span>
                     <IconX size={20} />
                     <span>{props.item.quantidade}</span>
@@ -32,7 +32,7 @@ export default function AreaItemCarrinho(props: AreaItemCarrinhoProps) {
                     </span>
                 </div>
             </div>
-            <div className="flex gap-2 items-center px-5">
+            <div className="flex gap-2 items-center px-5 pb-8 md:pb-0">
                 <button onClick={() => props.remover?.(props.item)}>
                     <IconMinus />
                 </button>
